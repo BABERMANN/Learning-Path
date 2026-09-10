@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!-- O <!DOCTYPE html> informa ao navegador que o documento segue o padrão HTML5 [1] -->
+<html lang="pt-br"> <!-- Define a linguagem principal do documento [1] -->
+<head>
+    <!-- O head contém metadados e configurações enviadas ao navegador [1] -->
+    <meta charset="utf-8"> <!-- Codificação de caracteres [2] -->
+    <title>Exemplo Completo - Introdução à Web (IFSP)</title> <!-- Título da aba [2] -->
+    <link rel="icon" href="favicon.ico"> <!-- Ícone opcional da aba [2] -->
+</head>
+<body> <!-- O body contém o conteúdo visível da página [1, 2] -->
+
+    <!-- ======================================================= -->
+    <!-- AULA 02: ESTRUTURA E TAGS TEXTUAIS                     -->
+    <!-- ======================================================= -->
+    
+    <!-- Recomenda-se apenas uma tag <h1> por página para o título principal [3] -->
+    <h1>Guia Prático de HTML5</h1>
+    
+    <h2>1. Formatação de Texto e Hierarquia</h2> <!-- Títulos secundários devem ser <h2> [3] -->
+    
+    <p>Este é um parágrafo tradicional usando a tag &lt;p&gt; [4, 5].</p>
+    <p>
+        Podemos adicionar <em>ênfase simples (em)</em> ou <strong>ênfase forte (strong)</strong> [5].
+        Também temos os estilos clássicos: <b>negrito (bold)</b>, <i>itálico (italic)</i> e <u>sublinhado (underline)</u> [6].
+    </p>
+    
+    <h3>Tags Textuais Específicas</h3>
+    <p>Podemos usar texto com <mark>marcação destacada em amarelo</mark> [6].</p>
+    <p>A sigla <abbr title="Instituto Federal de São Paulo">IFSP</abbr> exibe a expansão ao passar o mouse [7].</p>
+    <p>Texto <ins>adicionado recentemente</ins>, texto <del>removido</del> e texto <s>riscado</s> [7].</p>
+    <p>Expressões com superescrito X<sup>2</sup> e subscrito H<sub>2</sub>O [7].</p>
+
+    <!-- Preformatted: preserva espaços duplos e quebras de linha [5] -->
+    <pre>
+Texto pré-formatado (pre):
+    Espaços    e quebras
+são mantidos exatamente como digitados.
+    </pre>
+
+    <h3>Escape de Caracteres e Citações</h3>
+    <!-- Caracteres especiais devem ser escapados para não serem interpretados como tags [8] -->
+    <p>Para exibir o símbolo de menor usamos &amp;lt; (&lt;), maior &amp;gt; (&gt;) e &amp;amp; (&amp;) [8].</p>
+    
+    <p>Uma citação curta: <q>O HTML5 define a estrutura da Web</q> [9].</p>
+    <blockquote cite="https://validator.w3.org/">
+        Citação longa em bloco (blockquote), geralmente utilizada para trechos extensos [9].
+    </blockquote>
+
+
+    <!-- ======================================================= -->
+    <!-- AULA 03: LISTAS E TABELAS SEMÂNTICAS                   -->
+    <!-- ======================================================= -->
+    
+    <h2>2. Listas em HTML</h2>
+
+    <h3>Lista Ordenada (&lt;ol&gt;)</h3>
+    <!-- Atributos do ol: start (início), type ("1", "a", "A", "i", "I"), reversed [10, 11] -->
+    <ol start="1" type="i"> <!-- Exibe numeração romana minúscula (i, ii, iii) [11, 12] -->
+        <li>Primeiro item da lista [13]</li>
+        <li>Segundo item da lista [13]</li>
+        <li value="5">Item com valor alterado manualmente [10]</li> <!-- Altera o índice do item [10] -->
+        <li value="4">Item com o valor alterado manualmente</li>
+    </ol>
+
+    <h3>Lista Não-Ordenada (&lt;ul&gt;)</h3>
+    <ul id="menu_principal" class="menu"> <!-- Atributos globais id (único) e class [14] -->
+        <li>Item de menu 1 [12, 15]</li>
+        <li>Item de menu 2 [12]</li>
+    </ul>
+
+    <h3>Lista de Descrição (&lt;dl&gt;)</h3>
+    <dl>
+        <dt>HTML</dt> <!-- Termo [16] -->
+        <dd>Linguagem de marcação para estrutura web [16].</dd> <!-- Descrição [16] -->
+        <dt>CSS</dt>
+        <dd>Linguagem para estilização visual [12, 17].</dd>
+    </dl>
+
+    <h2>3. Tabela Semântica Completa</h2>
+    <!-- Atributo border="1" é inválido no HTML5, usado apenas didacticamente [18] -->
+    <table>
+        <caption>Preço Médio dos Combustíveis [19]</caption> <!-- Legenda da tabela [19] -->
+        <thead> <!-- Cabeçalho que descreve as colunas [19, 20] -->
+            <tr>
+                <th>Categoria</th> <!-- Célula de título [21] -->
+                <th>Tipo</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody> <!-- Corpo onde ficam os dados reais [19, 22] -->
+            <tr>
+                <!-- rowspan mescla múltiplas linhas [23] -->
+                <td rowspan="2">Combustível</td> <!-- Célula normal [21] -->
+                <td>Etanol</td>
+                <td>R$ 3.59</td>
+            </tr>
+            <tr>
+                <td>Gasolina</td>
+                <td>R$ 5.99</td>
+            </tr>
+        </tbody>
+        <tfoot> <!-- Rodapé para resumos ou conclusões [19, 22] -->
+            <tr>
+                <!-- colspan mescla múltiplas colunas [23] -->
+                <td colspan="2">Preço Médio Final</td>
+                <td>R$ 4.79</td>
+            </tr>
+        </tfoot>
+    </table>
+
+
+    <!-- ======================================================= -->
+    <!-- AULA 04: ÂNCORAS, MULTIMÍDIA E FORMULÁRIOS              -->
+    <!-- ======================================================= -->
+
+    <h2 id="secao_ancoras">4. Âncoras e Links (&lt;a&gt;)</h2>
+    <!-- Link externo que abre em nova aba/janela [24, 25] -->
+    <p>
+        <a href="https://pt.wikipedia.com" target="_blank" title="Dica ao passar o cursor">Visitar a Wikipédia</a> [25, 26]
+    </p>
+    <!-- Navegação relativa subindo um nível de diretório (../) [27] -->
+    <p>
+        <a href="../index.html">Voltar para a pasta anterior (../)</a> [27]
+    </p>
+    <!-- Âncora interna apontando para o ID de um elemento [28] -->
+    <p>
+        <a href="#secao_ancoras">Deslocar para esta própria seção (#id)</a> [28]
+    </p>
+    <!-- Links para ações do dispositivo (telefone e e-mail) [29] -->
+    <p>
+        Contato: <a href="tel:1633519458">Ligar</a> [29] ou <a href="mailto:duvidas@ifsp.edu.br">Enviar E-mail</a> [29]
+    </p>
+
+    <h2>5. Tags Multimídia</h2>
+    <!-- src (caminho) e alt (descrição alternativa) são OBRIGATÓRIOS em imagens [30] -->
+    <img src="logo.png" alt="Logotipo do IFSP" width="150" height="100"> [30]
+
+    <!-- Vídeo com controles, imagem de capa (poster) [31] -->
+    <video src="video.mp4" width="320" height="240" controls poster="capa.jpg">
+        Seu navegador não suporta a tag de vídeo [31].
+    </video>
+
+    <!-- Áudio com player de controle [32] -->
+    <audio src="audio.mp3" controls>
+        Seu navegador não suporta a tag de áudio [32].
+    </audio>
+
+    <h2>6. Formulários HTML5 (&lt;form&gt;)</h2>
+    <!-- action define o destino e method define o protocolo (GET é o padrão caso omitido) [33, 34] -->
+    <form action="processa.html" method="POST" autocomplete="on"> [33-35]
+
+        <!-- fieldset agrupa campos com afinidade [36, 37] -->
+        <fieldset>
+            <legend>Informações Pessoais</legend> [37]
+
+            <!-- label associado ao ID do input para usabilidade [38, 39] -->
+            <label for="campo_nome">Nome Completo:</label>
+            <!-- name identifica o dado enviado ao servidor (obrigatório e único) [40, 41] -->
+            <input type="text" id="campo_nome" name="nome" placeholder="Digite seu nome" required minlength="3" maxlength="50"> [40, 42-44]
+            <br><br>
+
+            <label for="campo_email">E-mail:</label>
+            <input type="email" id="campo_email" name="email" placeholder="seu@email.com" required> [44, 45]
+            <br><br>
+
+            <label for="campo_senha">Senha:</label>
+            <input type="password" id="campo_senha" name="senha" minlength="6"> [44, 45]
+            <br><br>
+
+            <label for="campo_idade">Idade:</label>
+            <input type="number" id="campo_idade" name="idade" min="10" max="100" step="1"> [41, 44]
+            <br><br>
+
+            <label for="campo_data">Data de Nascimento:</label>
+            <input type="date" id="campo_data" name="data_nasc"> [45]
+        </fieldset>
+
+        <fieldset>
+            <legend>Opções e Seleções</legend> [37]
+
+            <p>Grau de Escolaridade (Seleção única - Radio): [46]</p>
+            <!-- Inputs do tipo radio com o mesmo name garantem seleção única [46] -->
+            <input type="radio" id="esc1" name="escolaridade" value="fundamental">
+            <label for="esc1">Ensino Fundamental</label> [38, 39]
+            <br>
+            <input type="radio" id="esc2" name="escolaridade" value="medio" checked> <!-- checked inicia marcado [38] -->
+            <label for="esc2">Ensino Médio</label> [38, 39]
+            <br><br>
+
+            <p>Áreas de Interesse (Seleção múltipla - Checkbox): [47]</p>
+            <!-- Quando enviados múltiplos valores com mesmo nome, utiliza-se vetor [] [41, 47] -->
+            <input type="checkbox" id="int1" name="interesses[]" value="web">
+            <label for="int1">Desenvolvimento Web</label>
+            <br>
+            <input type="checkbox" id="int2" name="interesses[]" value="bd">
+            <label for="int2">Banco de Dados</label>
+            <br><br>
+
+            <label for="select_curso">Selecione seu Curso:</label>
+            <select id="select_curso" name="curso"> [48]
+                <option value="">--- Selecione ---</option> [48]
+                <option value="ads">Análise e Desenvolvimento de Sistemas</option>
+                <option value="bes">Bacharelado em Engenharia de Software</option>
+            </select>
+            <br><br>
+
+            <label for="campo_obs">Observações (Múltiplas linhas):</label><br>
+            <textarea id="campo_obs" name="observacoes" rows="4" cols="40" placeholder="Escreva suas observações..."></textarea> [49]
+            <br><br>
+
+            <label for="barra_progresso">Progresso da Inscrição:</label>
+            <progress id="barra_progresso" value="75" max="100"></progress> [49]
+        </fieldset>
+
+        <br>
+        <!-- Botão para envio do formulário [45] -->
+        <button type="submit">Enviar Dados</button> [45]
+        <!-- Botão para redefinir/resetar o formulário [45] -->
+        <button type="reset">Limpar Formulário</button> [45]
+    </form>
+
+</body>
+</html>
